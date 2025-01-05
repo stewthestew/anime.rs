@@ -1,14 +1,26 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+// Import the anime module
+mod anime;
 
+// Re-export public functions from the anime module
+pub use anime::{
+    flint, spinner, arrow, arrow_brackets, dots, dots_spinner, mini_dots_spinner, pulse,
+    loading_bar,
+};
+
+// Add your unit tests
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn test_spinner() {
+        // Basic test to ensure the spinner doesn't panic
+        spinner(1, 100);
+    }
+
+    #[test]
+    fn test_loading_bar() {
+        // Basic test for loading bar functionality
+        loading_bar("Test", 5, 50);
     }
 }
