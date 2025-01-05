@@ -6,7 +6,7 @@ chat gpt btw
 - ANIME.rs is a minimalistic terminal animation library written in Rust. It provides basic text-based animations for enhancing the user experience in terminal-based applications.
 
 Features:
-- **Flint**: Prints text with custom timing and clears the line.
+- **Flint**: Prints text with custom timing and flushes.
 - **Spinner**: Displays a simple spinner animation.
 - **Arrow**: An animated arrow that progressively builds.
 - **Arrow Brackets**: Displays an arrow with brackets around the shaft.
