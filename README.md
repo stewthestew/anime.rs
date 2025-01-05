@@ -26,7 +26,7 @@ Notes:
 - Aimed at simplicity ~~and speed~~
 - Customizable delay and length for each animation type.
 # Showcase
-![showcase](https://github.com/user-attachments/assets/c7b2233f-1ad3-470e-8081-82ed7677cb6f)
+![showcase2](https://github.com/user-attachments/assets/45d5cf8b-d143-4595-a206-c140982c6673)
 > [!NOTE]
 > I dont know why hiding the cursor works with some terminals and some not.
 > Also some systems and some not
