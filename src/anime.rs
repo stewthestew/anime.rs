@@ -6,6 +6,7 @@ use std::{
     thread::sleep,
     time::Duration,
 };
+
 // required componment
 #[allow(dead_code)]
 pub fn flint(str: &str, dur_ms: u64) {
@@ -21,6 +22,7 @@ pub fn flint(str: &str, dur_ms: u64) {
 /* does not take text
 * only implements spinner
 */
+
 #[allow(dead_code)]
 pub fn spinner(times: u32, delay: u64) {
     for _ in 0..times {
@@ -136,6 +138,7 @@ pub fn pulse(times: u32, delay: u64) {
 }
 
 // █  ░
+
 #[allow(dead_code)]
 pub fn loading_bar(text: &str, num_shaft: u32, delay: u64) {
     let mut bar: Vec<String> = vec![];
@@ -154,5 +157,13 @@ pub fn loading_bar(text: &str, num_shaft: u32, delay: u64) {
                 exit(1);
             }
         };
+    }
+}
+// use the = symbold
+#[allow(dead_code)]
+pub fn bouncing_equals(times: u32, delay: u64) {
+    for _ in 0..times {
+        flint("\r= ", delay);
+        flint("\r =", delay);
     }
 }
