@@ -1,5 +1,7 @@
-// notes to copilot
-// i am making an app called anime.rs and its an animation library for the terminal
+use crossterm::{
+    execute,
+    style::{self},
+};
 use std::{
     io::{self, Write},
     process::exit,
@@ -8,15 +10,26 @@ use std::{
 };
 
 // required componment
+// Oh yeah  updated flint to use crossterm
+
 #[allow(dead_code)]
 pub fn flint(str: &str, dur_ms: u64) {
-    print!("{str}");
-    if let Err(e) = io::stdout().flush() {
-        eprintln!("{e}");
-        exit(1);
-    }
+    match execute!(io::stdout(), style::Print(str), crossterm::cursor::Hide) {
+        Ok(value) => value,
+        Err(e) => {
+            eprintln!("{e}");
+            exit(1);
+        }
+    };
     print!("\x1b[2K\r");
     sleep(Duration::from_millis(dur_ms));
+    match execute!(io::stdout(), crossterm::cursor::Show) {
+        Ok(value) => value,
+        Err(e) => {
+            eprintln!("{e}");
+            exit(1);
+        }
+    };
 }
 
 /* does not take text
@@ -159,6 +172,7 @@ pub fn loading_bar(text: &str, num_shaft: u32, delay: u64) {
         };
     }
 }
+
 // use the = symbold
 #[allow(dead_code)]
 pub fn bouncing_equals(times: u32, delay: u64) {
