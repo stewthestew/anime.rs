@@ -16,7 +16,8 @@ Features:
 - **Mini Dots Spinner**: A spinner with various dot symbols.
 - **Loading Bar**: Simulate a loading bar with customizable steps and speed.
 - **Bouncing equals**: A bouncing equals sign animation.
-Usage:
+
+# Usage
 ```
 anime::loading_bar("Loading... ", 20, 50);
 anime::dots(true, 3, 100);
