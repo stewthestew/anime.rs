@@ -40,6 +40,9 @@ fn main() {
 Notes:
 - Aimed at simplicity ~~and speed~~
 - Customizable delay and length for each animation type.
+- If your cursor stays hidden forever, that's a you problem, not an anime.rs problem.
+
+
 # Showcase
 ![showcase2](https://github.com/user-attachments/assets/45d5cf8b-d143-4595-a206-c140982c6673)
 
