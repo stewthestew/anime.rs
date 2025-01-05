@@ -23,3 +23,5 @@ anime::dots(true, 3, 100);
 Notes:
 - Aimed at simplicity ~~and speed~~
 - Customizable delay and length for each animation type.
+# Show case
+![showcase](https://github.com/user-attachments/assets/c7b2233f-1ad3-470e-8081-82ed7677cb6f)
