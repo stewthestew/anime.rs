@@ -15,6 +15,7 @@ Features:
 - **Pulse**: A pulsing effect with different block characters.
 - **Mini Dots Spinner**: A spinner with various dot symbols.
 - **Loading Bar**: Simulate a loading bar with customizable steps and speed.
+- **Bouncing equals**: A bouncing equals sign animation.
 Usage:
 ```
 anime::loading_bar("Loading... ", 20, 50);
