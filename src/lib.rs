@@ -3,8 +3,8 @@ mod anime;
 
 // Re-export public functions from the anime module
 pub use anime::{
-    flint, spinner, arrow, arrow_brackets, dots, dots_spinner, mini_dots_spinner, pulse,
-    loading_bar,
+    spinner, arrow, arrow_brackets, dots, dots_spinner, mini_dots_spinner, pulse,
+    loading_bar, show, hide, flint
 };
 
 // Add your unit tests
@@ -16,11 +16,15 @@ mod tests {
     fn test_spinner() {
         // Basic test to ensure the spinner doesn't panic
         spinner(1, 100);
+        hide();
+        show();
     }
 
     #[test]
     fn test_loading_bar() {
         // Basic test for loading bar functionality
         loading_bar("Test", 5, 50);
+        hide();
+        show();
     }
 }
