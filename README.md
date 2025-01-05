@@ -21,5 +21,5 @@ anime::loading_bar("Loading... ", 20, 50);
 anime::dots(true, 3, 100);
 ```
 Notes:
-- Aimed at simplicity ~~and speed~~.
+- Aimed at simplicity ~~and speed~~
 - Customizable delay and length for each animation type.
