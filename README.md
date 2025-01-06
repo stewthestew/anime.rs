@@ -17,7 +17,7 @@ Features:
 - **Bouncing equals**: A bouncing equals sign animation.
 
 # Usage
-```
+``` rust
 fn main() {
     let mut name = String::new();
     anime::loading_bar("Loading program: ", 10, 100);
