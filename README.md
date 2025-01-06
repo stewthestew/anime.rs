@@ -47,3 +47,4 @@ Notes:
 
 # Credit
 - [Crossterm](http://github.com/crossterm-rs/crossterm) for powering anime.rs
+- [Clap](https://github.com/clap-rs/clap) For powering the anime.rs tutorial cli tool
