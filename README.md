@@ -1,6 +1,8 @@
 chat gpt btw
 > [!WARNING]
 > This is made for my own personal use.
+> 
+> And it's consistantly changing, since it has not matured yet.
 # ANIME.rs
 - A Simple Rust Animation Library for the Terminal.
 - ANIME.rs is a minimalistic terminal animation library written in Rust. It provides basic text-based animations for enhancing the user experience in terminal-based applications.
