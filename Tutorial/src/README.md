@@ -84,4 +84,4 @@ And it also shows documentation of the animations
            Purpose: Smoothly displays intermediate frames during animations.\n\
 \
         Replace these examples with your use cases or refer to the anime.rs documentation for more details.
-```txt
+```
