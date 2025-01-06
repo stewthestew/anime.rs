@@ -4,7 +4,7 @@ mod anime;
 // Re-export public functions from the anime module
 pub use anime::{
     spinner, arrow, arrow_brackets, dots, dots_spinner, mini_dots_spinner, pulse,
-    loading_bar, show, hide, flint
+    loading_bar, show, hide, flint, bouncing_equals
 };
 
 // Add your unit tests
