@@ -200,3 +200,28 @@ pub fn bouncing_equals(times: u32, delay: u64) {
     }
     show();
 }
+
+
+#[allow(dead_code)]
+pub fn custom_loading(text: &str, num_shaft: u32, delay: u64, char: &str) {
+    hide();
+    let mut arrow: Vec<String> = vec![];
+    for _ in 0..num_shaft {
+        sleep(Duration::from_millis(delay));
+        arrow.push(String::from(char));
+
+        let formatted_arrow = format!("{text}{}", arrow.join(""));
+        let trimmed_arrow = formatted_arrow.trim_matches('"');
+
+        print!("\r{}", trimmed_arrow);
+        match io::stdout().flush() {
+            Ok(value) => value,
+            Err(e) => {
+                eprintln!("{e}");
+                exit(1);
+            }
+        };
+    }
+    show();
+}
+
