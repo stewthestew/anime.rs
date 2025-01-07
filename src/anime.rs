@@ -9,8 +9,6 @@ use std::{
     time::Duration,
 };
 
-// required componment
-// Oh yeah  updated flint to use crossterm
 #[allow(dead_code)]
 pub fn flint(str: &str, dur_ms: u64) {
     if let Err(e) = execute!(io::stdout(), style::Print(str),) {
@@ -33,9 +31,6 @@ pub fn hide() {
         exit(1);
     }
 }
-/* does not take text
-* only implements spinner
-*/
 
 #[allow(dead_code)]
 pub fn spinner(times: u32, delay: u64) {
@@ -201,7 +196,6 @@ pub fn bouncing_equals(times: u32, delay: u64) {
     show();
 }
 
-
 #[allow(dead_code)]
 pub fn custom_loading(text: &str, num_shaft: u32, delay: u64, char: &str) {
     hide();
@@ -225,3 +219,14 @@ pub fn custom_loading(text: &str, num_shaft: u32, delay: u64, char: &str) {
     show();
 }
 
+#[allow(dead_code)]
+/// Example anime::custom(vec!["1", "2"] ...)
+pub fn custom(frames: Vec<&str>, times: u32, delay: u64) {
+    hide();
+    for _ in 0..times {
+        for frame in &frames {
+            flint(&format!("\r{}", frame), delay);
+        }
+    }
+    show();
+}
