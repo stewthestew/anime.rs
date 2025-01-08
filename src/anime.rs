@@ -33,26 +33,26 @@ pub fn hide() {
 }
 
 #[allow(dead_code)]
-pub fn spinner(times: u32, delay: u64) {
+pub fn spinner(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint("\r/", delay);
-        flint("\r-", delay);
-        flint("\r\\", delay);
-        flint("\r|", delay);
+        flint(&format!("\r{} / {}", start, end), delay);
+        flint(&format!("\r{} - {}", start, end), delay);
+        flint(&format!("\r{} \\ {}", start, end), delay);
+        flint(&format!("\r{} | {}", start, end), delay);
     }
     show();
 }
 
 #[allow(dead_code)]
-pub fn arrow(text: &str, shaft_num: u32, delay: u64) {
+pub fn arrow(start: &str, end: &str, shaft_num: u32, delay: u64) {
     hide();
     let mut arrow: Vec<String> = vec![];
     for _ in 0..shaft_num {
         sleep(Duration::from_millis(delay));
         arrow.push(String::from("="));
 
-        let formatted_arrow = format!("{text}{}{}", arrow.join(""), ">");
+        let formatted_arrow = format!("{}{}>{}", start, arrow.join(""), end);
         let trimmed_arrow = formatted_arrow.trim_matches('"');
 
         print!("\r{}", trimmed_arrow);
@@ -68,14 +68,14 @@ pub fn arrow(text: &str, shaft_num: u32, delay: u64) {
 }
 
 #[allow(dead_code)]
-pub fn arrow_brackets(text: &str, num_shaft: u32, delay: u64) {
+pub fn arrow_brackets(start: &str, end: &str, num_shaft: u32, delay: u64) {
     hide();
     let mut arrow: Vec<String> = vec![];
     for _ in 0..num_shaft {
         sleep(Duration::from_millis(delay));
         arrow.push(String::from("="));
 
-        let formatted_arrow = format!("{text}[{}{}]", arrow.join(""), ">");
+        let formatted_arrow = format!("{}[{}>{}]", start, arrow.join(""), end);
         let trimmed_arrow = formatted_arrow.trim_matches('"');
 
         print!("\r{}", trimmed_arrow);
@@ -91,86 +91,80 @@ pub fn arrow_brackets(text: &str, num_shaft: u32, delay: u64) {
 }
 
 #[allow(dead_code)]
-pub fn dots(empty_at_start: bool, times: u32, delay: u64) {
+pub fn dots(start: &str, end: &str, empty_at_start: bool, times: u32, delay: u64) {
     hide();
     if empty_at_start == true {
         for _ in 0..times {
-            flint("\r", delay);
-            flint("\r.", delay);
-            flint("\r..", delay);
-            flint("\r...", delay);
+            flint(&format!("\r{} {}", start, end), delay);
+            flint(&format!("\r{} . {}", start, end), delay);
+            flint(&format!("\r{} .. {}", start, end), delay);
+            flint(&format!("\r{} ... {}", start, end), delay);
         }
     } else {
         for _ in 0..times {
-            flint("\r.", delay);
-            flint("\r..", delay);
-            flint("\r...", delay);
+            flint(&format!("\r{} . {}", start, end), delay);
+            flint(&format!("\r{} .. {}", start, end), delay);
+            flint(&format!("\r{} ... {}", start, end), delay);
         }
     }
     show();
 }
-//⣾  ⣽  ⣻  ⢿  ⡿  ⣟  ⣯  ⣷
+
 #[allow(dead_code)]
-// The reccomended speed for this is 100 miliseconds
-pub fn dots_spinner(times: u32, delay: u64) {
+pub fn dots_spinner(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint("\r⣾", delay);
-        flint("\r⣽", delay);
-        flint("\r⣻", delay);
-        flint("\r⢿", delay);
-        flint("\r⡿", delay);
-        flint("\r⣟", delay);
-        flint("\r⣯", delay);
-        flint("\r⣷", delay);
+        flint(&format!("\r{} ⣾ {}", start, end), delay);
+        flint(&format!("\r{} ⣽ {}", start, end), delay);
+        flint(&format!("\r{} ⣻ {}", start, end), delay);
+        flint(&format!("\r{} ⢿ {}", start, end), delay);
+        flint(&format!("\r{} ⡿ {}", start, end), delay);
+        flint(&format!("\r{} ⣟ {}", start, end), delay);
+        flint(&format!("\r{} ⣯ {}", start, end), delay);
+        flint(&format!("\r{} ⣷ {}", start, end), delay);
     }
     show();
 }
 
-// ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
 #[allow(dead_code)]
-// the reccomended speed for this is 100 miliseconds
-pub fn mini_dots_spinner(times: u32, delay: u64) {
+pub fn mini_dots_spinner(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint("\r⠋", delay);
-        flint("\r⠙", delay);
-        flint("\r⠹", delay);
-        flint("\r⠸", delay);
-        flint("\r⠼", delay);
-        flint("\r⠴", delay);
-        flint("\r⠦", delay);
-        flint("\r⠧", delay);
-        flint("\r⠇", delay);
-        flint("\r⠏", delay);
-    }
-    show();
-}
-// █ ▓ ▒ ░
-// the reccomended speed for this is 100 miliseconds
-#[allow(dead_code)]
-pub fn pulse(times: u32, delay: u64) {
-    hide();
-    for _ in 0..times {
-        flint("\r█", delay);
-        flint("\r▓", delay);
-        flint("\r▒", delay);
-        flint("\r░", delay);
+        flint(&format!("\r{} ⠋ {}", start, end), delay);
+        flint(&format!("\r{} ⠙ {}", start, end), delay);
+        flint(&format!("\r{} ⠹ {}", start, end), delay);
+        flint(&format!("\r{} ⠸ {}", start, end), delay);
+        flint(&format!("\r{} ⠼ {}", start, end), delay);
+        flint(&format!("\r{} ⠴ {}", start, end), delay);
+        flint(&format!("\r{} ⠦ {}", start, end), delay);
+        flint(&format!("\r{} ⠧ {}", start, end), delay);
+        flint(&format!("\r{} ⠇ {}", start, end), delay);
+        flint(&format!("\r{} ⠏ {}", start, end), delay);
     }
     show();
 }
 
-// █  ░
+#[allow(dead_code)]
+pub fn pulse(start: &str, end: &str, times: u32, delay: u64) {
+    hide();
+    for _ in 0..times {
+        flint(&format!("\r{} █ {}", start, end), delay);
+        flint(&format!("\r{} ▓ {}", start, end), delay);
+        flint(&format!("\r{} ▒ {}", start, end), delay);
+        flint(&format!("\r{} ░ {}", start, end), delay);
+    }
+    show();
+}
 
 #[allow(dead_code)]
-pub fn loading_bar(text: &str, num_shaft: u32, delay: u64) {
+pub fn loading_bar(start: &str, end: &str, num_shaft: u32, delay: u64) {
     hide();
     let mut arrow: Vec<String> = vec![];
     for _ in 0..num_shaft {
         sleep(Duration::from_millis(delay));
         arrow.push(String::from("█"));
 
-        let formatted_arrow = format!("{text}{}", arrow.join(""));
+        let formatted_arrow = format!("{}{}{}", start, arrow.join(""), end);
         let trimmed_arrow = formatted_arrow.trim_matches('"');
 
         print!("\r{}", trimmed_arrow);
@@ -185,26 +179,25 @@ pub fn loading_bar(text: &str, num_shaft: u32, delay: u64) {
     show();
 }
 
-// use the = symbold
 #[allow(dead_code)]
-pub fn bouncing_equals(times: u32, delay: u64) {
+pub fn bouncing_equals(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint("\r= ", delay);
-        flint("\r =", delay);
+        flint(&format!("\r{} = {}", start, end), delay);
+        flint(&format!("\r{} = {}", start, end), delay);
     }
     show();
 }
 
 #[allow(dead_code)]
-pub fn custom_loading(text: &str, num_shaft: u32, delay: u64, char: &str) {
+pub fn custom_loading(start: &str, end: &str, num_shaft: u32, delay: u64, char: &str) {
     hide();
     let mut arrow: Vec<String> = vec![];
     for _ in 0..num_shaft {
         sleep(Duration::from_millis(delay));
         arrow.push(String::from(char));
 
-        let formatted_arrow = format!("{text}{}", arrow.join(""));
+        let formatted_arrow = format!("{}{}{}", start, arrow.join(""), end);
         let trimmed_arrow = formatted_arrow.trim_matches('"');
 
         print!("\r{}", trimmed_arrow);
@@ -220,12 +213,11 @@ pub fn custom_loading(text: &str, num_shaft: u32, delay: u64, char: &str) {
 }
 
 #[allow(dead_code)]
-/// Example anime::custom(vec!["1", "2"] ...)
-pub fn custom(frames: Vec<&str>, times: u32, delay: u64) {
+pub fn custom(start: &str, end: &str, frames: Vec<&str>, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
         for frame in &frames {
-            flint(&format!("\r{}", frame), delay);
+            flint(&format!("\r{} {} {}", start, frame, end), delay);
         }
     }
     show();
