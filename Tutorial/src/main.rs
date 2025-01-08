@@ -1,10 +1,10 @@
 use anime;
 use clap::{command, Arg};
+
 fn main() {
     let matches = command!()
         .about("Shows examples of Anime.rs cli animations")
         .arg(
-            //a dasdas
             Arg::new("animation")
                 .short('a')
                 .help("Specifies which animation to play. If Animation is not found, it will show you a list of animations.\nPlus help / documentation for them")
@@ -14,43 +14,39 @@ fn main() {
     let anim = matches.get_one::<String>("animation").unwrap().as_str();
     match anim {
         "arrow" => {
-            anime::arrow("Text... ", 10, 100);
+            anime::arrow("Text... ", "", 10, 100);
             println!("\nHey");
         }
         "arrow_bracket" => {
-            anime::arrow_brackets("Text... ", 10, 100);
+            anime::arrow_brackets("Text... ", "", 10, 100);
             println!("\nHey");
         }
         "dots" => {
-            anime::dots(true, 3, 200);
+            anime::dots("Text... ", "", true, 3, 200);
             println!("Hey");
         }
-
         "mini_dots_spinner" => {
-            anime::mini_dots_spinner(3, 100);
+            anime::mini_dots_spinner("Text... ", "", 3, 100);
             println!("Hey");
         }
-
         "dots_spinner" => {
-            anime::dots_spinner(3, 100);
+            anime::dots_spinner("Text... ", "", 3, 100);
             println!("Hey");
         }
-
         "spinner" => {
-            anime::spinner(3, 100);
+            anime::spinner("Text... ", "", 3, 100);
             println!("Hey");
         }
-
         "loading_bar" => {
-            anime::loading_bar("Text... ", 10, 100);
+            anime::loading_bar("Text... ", "", 10, 100);
             println!("\nHey");
         }
         "pulse" => {
-            anime::pulse(3, 100);
+            anime::pulse("Text... ", "", 3, 100);
             println!("Hey");
         }
         "bouncing_equals" => {
-            anime::bouncing_equals(3, 100);
+            anime::bouncing_equals("Text... ", "", 3, 100);
         }
         _ => {
             println!("Did not find animation... Showing help now.");
