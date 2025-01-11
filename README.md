@@ -21,7 +21,6 @@ Features:
 - **Bouncing equals**: A bouncing equals sign animation.
 
 # Usage
-OUTDATED. You need to add a start and end now
 ``` rust
 fn main() {
     let mut name = String::new();
