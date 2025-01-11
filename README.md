@@ -48,7 +48,11 @@ Notes:
 - Customizable delay and length for each animation type.
 - If your cursor stays hidden forever, that's a you problem, not an anime.rs problem.
 
+# Basics
+An animation takes in the following. (Start, end, time and a delay)
 
+Some animation have special cases where they might take in a **bool** (dots animation) Or a length of 'shaft' (Loading bar type animations)
+ 
 # Showcase
 ![showcase3](https://github.com/user-attachments/assets/8ebe068b-6086-4860-b8b3-33980cbe91e5)
 
