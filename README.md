@@ -21,6 +21,7 @@ Features:
 - **Bouncing equals**: A bouncing equals sign animation.
 
 # Usage
+OUTDATED. You need to add a start and end now
 ``` rust
 fn main() {
     let mut name = String::new();
@@ -52,3 +53,6 @@ Notes:
 # Credit
 - [Crossterm](http://github.com/crossterm-rs/crossterm) for powering anime.rs
 - [Clap](https://github.com/clap-rs/clap) For powering the anime.rs tutorial cli tool
+
+# Todo
+- [ ] Update Documentation
