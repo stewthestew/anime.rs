@@ -25,19 +25,22 @@ OUTDATED. You need to add a start and end now
 ``` rust
 fn main() {
     let mut name = String::new();
-    anime::loading_bar("Loading program: ", 10, 100);
+    anime::loading_bar("Loading program: ", "", 10, 100);
     println!("\nWhat's your name?");
-    stdin().read_line(&mut name).expect("Bad habit over here");
-    anime::dots(true, 3, 100);
+    stdin()
+        .read_line(&mut name)
+        .expect("Error happened with reading line");
+    anime::dots("", "", true, 3, 100);
     println!("What's your Adress?");
+    anime::hide(); // Hides the cursor permenantly until shown
     sleep(Duration::from_secs(1));
-    anime::dots(true, 3, 300);
+    anime::dots("", "", true, 3, 300);
     println!("Uhh...");
-    anime::dots(true, 2, 200);
+    anime::dots("", "", true, 2, 200);
     println!("No");
-    anime::arrow("", 10, 100);
-    println!("\nOk bye!");
-    anime::spinner(5, 100);
+    anime::dots("", "", true, 2, 100);
+    println!("Ok bye!");
+    anime::dots("", "", true, 3, 200);
     println!("Bye?");
 }
 ```
