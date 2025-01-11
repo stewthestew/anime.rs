@@ -50,7 +50,7 @@ Notes:
 
 
 # Showcase
-![image](https://github.com/user-attachments/assets/daf6d111-f25d-416a-aa39-7ed542f35716)
+![showcase3](https://github.com/user-attachments/assets/8ebe068b-6086-4860-b8b3-33980cbe91e5)
 
 # Credit
 - [Crossterm](http://github.com/crossterm-rs/crossterm) for powering anime.rs
