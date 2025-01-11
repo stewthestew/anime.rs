@@ -49,9 +49,23 @@ Notes:
 - If your cursor stays hidden forever, that's a you problem, not an anime.rs problem.
 
 # Basics
-An animation takes in the following. (Start, end, time and a delay)
+An animation takes in the following. (Start, end, times and a delay)
 
+Times is how many times will the animation be played
+
+
+As an example you can play an animation a 100 times but have 0 delay (speed of the animation)
+
+Eample:
+
+`anime::spinner("Text... ", "", 100, 0)` // Plays the animation 100 times with the delay of 0
+
+ ---
 Some animation have special cases where they might take in a **bool** (dots animation) Or a length of 'shaft' (Loading bar type animations)
+
+Example:
+
+`anime::loading_bar("Text... ", "", 10, 100) //  Plays the animation 10 times with the delay of 100`
  
 # Showcase
 ![showcase3](https://github.com/user-attachments/assets/8ebe068b-6086-4860-b8b3-33980cbe91e5)
