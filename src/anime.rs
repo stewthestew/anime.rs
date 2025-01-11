@@ -36,10 +36,10 @@ pub fn hide() {
 pub fn spinner(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint(&format!("\r{} / {}", start, end), delay);
-        flint(&format!("\r{} - {}", start, end), delay);
-        flint(&format!("\r{} \\ {}", start, end), delay);
-        flint(&format!("\r{} | {}", start, end), delay);
+        flint(&format!("\r{}/{}", start, end), delay);
+        flint(&format!("\r{}-{}", start, end), delay);
+        flint(&format!("\r{}\\{}", start, end), delay);
+        flint(&format!("\r{}|{}", start, end), delay);
     }
     show();
 }
@@ -95,16 +95,16 @@ pub fn dots(start: &str, end: &str, empty_at_start: bool, times: u32, delay: u64
     hide();
     if empty_at_start == true {
         for _ in 0..times {
-            flint(&format!("\r{} {}", start, end), delay);
-            flint(&format!("\r{} . {}", start, end), delay);
-            flint(&format!("\r{} .. {}", start, end), delay);
-            flint(&format!("\r{} ... {}", start, end), delay);
+            flint(&format!("\r{}{}", start, end), delay);
+            flint(&format!("\r{}.{}", start, end), delay);
+            flint(&format!("\r{}..{}", start, end), delay);
+            flint(&format!("\r{}...{}", start, end), delay);
         }
     } else {
         for _ in 0..times {
-            flint(&format!("\r{} . {}", start, end), delay);
-            flint(&format!("\r{} .. {}", start, end), delay);
-            flint(&format!("\r{} ... {}", start, end), delay);
+            flint(&format!("\r{}.{}", start, end), delay);
+            flint(&format!("\r{}..{}", start, end), delay);
+            flint(&format!("\r{}...{}", start, end), delay);
         }
     }
     show();
@@ -114,14 +114,14 @@ pub fn dots(start: &str, end: &str, empty_at_start: bool, times: u32, delay: u64
 pub fn dots_spinner(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint(&format!("\r{} ⣾ {}", start, end), delay);
-        flint(&format!("\r{} ⣽ {}", start, end), delay);
-        flint(&format!("\r{} ⣻ {}", start, end), delay);
-        flint(&format!("\r{} ⢿ {}", start, end), delay);
-        flint(&format!("\r{} ⡿ {}", start, end), delay);
-        flint(&format!("\r{} ⣟ {}", start, end), delay);
-        flint(&format!("\r{} ⣯ {}", start, end), delay);
-        flint(&format!("\r{} ⣷ {}", start, end), delay);
+        flint(&format!("\r{}⣾{}", start, end), delay);
+        flint(&format!("\r{}⣽{}", start, end), delay);
+        flint(&format!("\r{}⣻{}", start, end), delay);
+        flint(&format!("\r{}⢿{}", start, end), delay);
+        flint(&format!("\r{}⡿{}", start, end), delay);
+        flint(&format!("\r{}⣟{}", start, end), delay);
+        flint(&format!("\r{}⣯{}", start, end), delay);
+        flint(&format!("\r{}⣷{}", start, end), delay);
     }
     show();
 }
@@ -130,16 +130,16 @@ pub fn dots_spinner(start: &str, end: &str, times: u32, delay: u64) {
 pub fn mini_dots_spinner(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint(&format!("\r{} ⠋ {}", start, end), delay);
-        flint(&format!("\r{} ⠙ {}", start, end), delay);
-        flint(&format!("\r{} ⠹ {}", start, end), delay);
-        flint(&format!("\r{} ⠸ {}", start, end), delay);
-        flint(&format!("\r{} ⠼ {}", start, end), delay);
-        flint(&format!("\r{} ⠴ {}", start, end), delay);
-        flint(&format!("\r{} ⠦ {}", start, end), delay);
-        flint(&format!("\r{} ⠧ {}", start, end), delay);
-        flint(&format!("\r{} ⠇ {}", start, end), delay);
-        flint(&format!("\r{} ⠏ {}", start, end), delay);
+        flint(&format!("\r{}⠋{}", start, end), delay);
+        flint(&format!("\r{}⠙{}", start, end), delay);
+        flint(&format!("\r{}⠹{}", start, end), delay);
+        flint(&format!("\r{}⠸{}", start, end), delay);
+        flint(&format!("\r{}⠼{}", start, end), delay);
+        flint(&format!("\r{}⠴{}", start, end), delay);
+        flint(&format!("\r{}⠦{}", start, end), delay);
+        flint(&format!("\r{}⠧{}", start, end), delay);
+        flint(&format!("\r{}⠇{}", start, end), delay);
+        flint(&format!("\r{}⠏{}", start, end), delay);
     }
     show();
 }
@@ -148,10 +148,10 @@ pub fn mini_dots_spinner(start: &str, end: &str, times: u32, delay: u64) {
 pub fn pulse(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint(&format!("\r{} █ {}", start, end), delay);
-        flint(&format!("\r{} ▓ {}", start, end), delay);
-        flint(&format!("\r{} ▒ {}", start, end), delay);
-        flint(&format!("\r{} ░ {}", start, end), delay);
+        flint(&format!("\r{}█{}", start, end), delay);
+        flint(&format!("\r{}▓{}", start, end), delay);
+        flint(&format!("\r{}▒{}", start, end), delay);
+        flint(&format!("\r{}░{}", start, end), delay);
     }
     show();
 }
@@ -183,8 +183,8 @@ pub fn loading_bar(start: &str, end: &str, num_shaft: u32, delay: u64) {
 pub fn bouncing_equals(start: &str, end: &str, times: u32, delay: u64) {
     hide();
     for _ in 0..times {
-        flint(&format!("\r{} = {}", start, end), delay);
-        flint(&format!("\r{} = {}", start, end), delay);
+        flint(&format!("\r{}={}", start, end), delay);
+        flint(&format!("\r{}={}", start, end), delay);
     }
     show();
 }
@@ -217,7 +217,7 @@ pub fn custom(start: &str, end: &str, frames: Vec<&str>, times: u32, delay: u64)
     hide();
     for _ in 0..times {
         for frame in &frames {
-            flint(&format!("\r{} {} {}", start, frame, end), delay);
+            flint(&format!("\r{}{}{}", start, frame, end), delay);
         }
     }
     show();
