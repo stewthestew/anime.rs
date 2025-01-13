@@ -18,7 +18,10 @@ Features:
 - **Pulse**: A pulsing effect with different block characters.
 - **Mini Dots Spinner**: A spinner with various dot symbols.
 - **Loading Bar**: Simulate a loading bar with customizable steps and speed.
-- **Bouncing equals**: A bouncing equals sign animation.
+- **Bouncing equals**: A bouncing equals sign animation.-
+
+  **And more!**
+
 
 # Usage
 ``` rust
