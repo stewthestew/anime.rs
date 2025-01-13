@@ -61,7 +61,7 @@ As an example you can play an animation a 100 times but have 0 delay (speed of t
 
 Eample:
 
-`anime::spinner("Text... ", "", 100, 0)` // Plays the animation 100 times with the delay of 0
+`anime::spinner("Text... ", "", 100, 0) // Plays the animation 100 times with the delay of 0`
 
  ---
 Some animation have special cases where they might take in a **bool** (dots animation) Or a length of 'shaft' (Loading bar type animations)
