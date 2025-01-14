@@ -73,7 +73,7 @@ Example:
 # Showcase
 ![showcase3](https://github.com/user-attachments/assets/8ebe068b-6086-4860-b8b3-33980cbe91e5)
 
-# Similar projects
+# Better projects
 - [indicatif](https://github.com/console-rs/indicatif)
 
 # Credit
